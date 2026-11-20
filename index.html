@@ -1,22 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEUDOSOFIA</title>
+<title>NeuDoSofía · En construcción</title>
+<meta name="description" content="NeuDoSofía. Alma, camino, verdad. En construcción.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1854" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:title" content="NeuDoSofía">
+<meta property="og:description" content="En construcción.">
+<meta property="og:image" content="https://neudosofia.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NeuDoSofía · ALMA – CAMINO – VERDAD">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#222;background:#fafafa;text-align:center;padding:1rem;box-sizing:border-box}
-h1{font-size:2.2rem;letter-spacing:.08em;margin:0 0 .5rem}
-p{margin:0 0 2rem;font-size:1.2rem}
-footer{font-size:.85rem;color:#555}
-a{color:inherit}
+/* NEUDOSOFIA · «En construcción» (pieza EnConstruccion del sistema «Archivador»; web-construir, Hilos 332, 20/11/2026).
+   Sigue al aparato: crema con el logo en azul en claro, azul con el logo en crema en oscuro. La luz de la esquina es la
+   del kit del logo, a escala. Las letras van dentro (/letras/). */
+@font-face{font-family:'Shippori Mincho';src:url('/letras/ShipporiMincho-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Shippori Mincho';src:url('/letras/ShipporiMincho-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Atkinson Hyperlegible Next';src:url('/letras/AtkinsonHyperlegibleNext-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root { color-scheme: light dark; --fondo: #F5F1E8; --tinta: #0A1854; --tenue: #505980;
+  --brillo: rgba(255,255,255,.85); --brillo2: rgba(255,255,255,.21); --brillo0: rgba(255,255,255,0);
+  --luz: rgba(212,182,120,.75); --luz2: rgba(212,182,120,.11); }
+@media (prefers-color-scheme: dark) {
+  :root { --fondo: #0A1854; --tinta: #F5F1E8; --tenue: #AEB0BC;
+    --brillo: rgba(245,241,232,.16); --brillo2: rgba(245,241,232,.04); --brillo0: rgba(245,241,232,0);
+    --luz: rgba(245,241,232,.95); --luz2: rgba(245,241,232,.14); }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--fondo); color: var(--tinta); font-family: 'Atkinson Hyperlegible Next', Verdana, sans-serif; }
+.nds { position: relative; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; align-items: center;
+  overflow: hidden; background: radial-gradient(circle 960px at 34px 34px, var(--brillo), var(--brillo2) 55%, var(--brillo0) 100%), var(--fondo); }
+.luz { position: absolute; left: 31px; top: 28px; pointer-events: none; }
+.luz-h { width: 156px; height: 12px; border-radius: 6px; background: linear-gradient(90deg, var(--luz), var(--luz2)); }
+.luz-v { width: 5.3px; height: 121px; border-radius: 2.6px; background: linear-gradient(180deg, var(--luz), var(--luz2)); }
+main { flex: 1 1 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 40px 32px 0; }
+h1 { margin: 0; line-height: 0; }
+.logo { display: block; width: 330px; max-width: 100%; height: auto; }
+.aviso { margin: 0; font-family: 'Shippori Mincho', Georgia, serif; font-size: 22px; letter-spacing: .14em; color: var(--tenue); }
+.abajo { align-self: stretch; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding: 0 40px 36px; }
+footer { display: flex; flex-wrap: wrap; gap: 4px 20px; padding-bottom: 4px; font-size: 13px; color: var(--tenue); }
+.boton { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 210px; min-height: 48px;
+  padding: 0 30px; border: 1.5px solid var(--tinta); border-radius: 24px; color: var(--tinta); font-family: 'Shippori Mincho', Georgia, serif;
+  font-size: 18px; font-weight: 600; letter-spacing: .04em; text-decoration: none; }
+.boton:hover { color: var(--tenue); border-color: var(--tenue); }
+a:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .nds { background: radial-gradient(circle 600px at 21px 21px, var(--brillo), var(--brillo2) 55%, var(--brillo0) 100%), var(--fondo); }
+  .luz { left: 19px; top: 17px; }
+  .luz-h { width: 98px; height: 7px; border-radius: 4px; }
+  .luz-v { width: 3.3px; height: 76px; border-radius: 1.6px; }
+  main { gap: 22px; padding: 56px 24px 8px; }
+  .logo { width: 250px; }
+  .aviso { font-size: 20px; }
+  .abajo { flex-direction: column-reverse; align-items: flex-end; gap: 22px; padding: 0 20px 22px; }
+  footer { align-self: stretch; justify-content: center; padding-bottom: 0; }
+}
 </style>
 </head>
 <body>
+<div class="nds">
+<span class="luz luz-h" aria-hidden="true"></span><span class="luz luz-v" aria-hidden="true"></span>
 <main>
-<h1>NEUDOSOFIA</h1>
-<p>Próximamente.</p>
+<h1><picture><source srcset="/logo/neudosofia-vertical-crema-transparente.svg" media="(prefers-color-scheme: dark)"><img class="logo" src="/logo/neudosofia-vertical-azul-transparente.svg" alt="NeuDoSofía. Alma, camino, verdad" width="600" height="760"></picture></h1>
+<p class="aviso">En construcción</p>
 </main>
-<footer>NEUDOSOFIA · licencia CC BY-NC-SA 4.0 · contacto: <a href="mailto:contacto@neudosofia.com">contacto@neudosofia.com</a> · Esta web no recoge datos ni usa cookies</footer>
+<div class="abajo">
+<footer><span>NEUDOSOFIA</span><span>licencia CC BY-NC-SA 4.0</span><span>contacto: contacto@neudosofia.com</span><span>Esta web no recoge datos ni usa cookies</span></footer>
+<a class="boton" href="https://jag.neudosofia.com">Colaboradores</a>
+</div>
+</div>
 </body>
 </html>
